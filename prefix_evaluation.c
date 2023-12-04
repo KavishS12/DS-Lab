@@ -56,7 +56,7 @@ void display(stack *s)
 
 int main()
 {
-    char exp[10];
+    char exp[20];
     printf("Enter the expression:");
     scanf("%s",exp);
 
