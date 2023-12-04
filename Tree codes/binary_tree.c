@@ -59,6 +59,25 @@ void preOrder(node *tree) {
     }
 }
 
+void levelOrder(node* root)
+{
+    int h = height(root);
+    int i;
+    for (i = 1; i <= h; i++)
+        printCurrentLevel(root, i);
+}
+void printCurrentLevel(node* root, int level)
+{
+    if (root == NULL)
+        return;
+    if (level == 1)
+        printf("%d ", root->data);
+    else if (level > 1) {
+        printCurrentLevel(root->left, level - 1);
+        printCurrentLevel(root->right, level - 1);
+    }
+}
+
 int height(node *t){
     if(t==NULL)
         return 0;
@@ -133,6 +152,9 @@ int main()
 
     printf("\nThe inorder traversal of tree is:\n");
     inOrder(root);
+
+    printf("\nThe level order traversal of tree is:\n");
+    levelOrder(root);
 
     int k=height(root);
     printf("\nHeight of tree is %d\n",k);

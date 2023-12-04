@@ -96,7 +96,6 @@ int main() {
                 printf("height of BST is %d\n",hei);
                 break;
             case 0:
-                // This is missing in your original code
                 break;
             default:
                 printf("Invalid choice\n");
